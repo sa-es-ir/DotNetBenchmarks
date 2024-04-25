@@ -7,7 +7,7 @@ namespace Benchmarks;
 
 [MemoryDiagnoser(false)]
 [HideColumns(Column.RatioSD, Column.AllocRatio)]
-[SimpleJob(RuntimeMoniker.Net80)]
+[SimpleJob(RuntimeMoniker.Net80, baseline: true)]
 [SimpleJob(RuntimeMoniker.Net90)]
 public class SystemTextJsonBenchmark
 {
@@ -21,7 +21,7 @@ public class SystemTextJsonBenchmark
         json = "{\"Id\":1,\"UniqueId\":\"fcd03978-0562-4166-bad9-55605e9d5ace\",\"Name\":\"test_name\",\"CreatedAt\":\"2024-04-25T09:39:10.6768869Z\"}";
     }
 
-    [Benchmark(Baseline = true)]
+    [Benchmark]
     public void Serialize() => JsonSerializer.Serialize(model);
 
     [Benchmark]
