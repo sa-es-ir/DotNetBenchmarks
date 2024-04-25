@@ -1,4 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
 using Benchmarks;
 
-BenchmarkRunner.Run<SystemTextJsonBenchmark>();
+BenchmarkRunner.Run<ListCountBenchmark>();
